@@ -1,0 +1,86 @@
+﻿
+                    erwthseis : Ola kai synthetic kai ap to cmd?
+                    an oxi poia?
+                    pws pairnw apanthsh invalid kai den exw unhandled
+                                                                                                                                                                                                                                                                        array[courses][students][assignment]  array [1] [2]
+
+
+                                                                                                                                                                                                                                                                            array[1][1]
+                                                                                                                                                                                                                                                                            array[1][2]
+                                                                                                                                                                                                                                                                            array[2][1]
+                                                                                                                                                                                                                                                                            array[3][1]
+
+                        COURSE MAMA OLWN (composition)                                                                                      Class student
+                                                                                                                                            
+                                                                                                                                            tuitionFees = exartwntai apo to type tou course. (gia saltsa meta)
+                                                                                                                                            composition assignment
+                                                                                                                                            LISTA me Courses
+                                                                                                                                            LISTA me assignments
+                        student compotion from course
+
+
+                        class with students within a course                                                                                  Class Assingment
+                        switch                                                                                                                      
+                                                                                                                                              composition apo students (each assignment has a student)
+                                                                                                                                              Lista Apo students.
+        
+                       case C# check if students 0 to count (from the list) their course is c# (this. klt)
+
+
+
+
+                       student "Choose the number of courses you are enrolled in"           
+                                
+                                readline (1 or to)
+
+                                switch
+
+                                    case1 one course kai dineis enan constractor with 1 course
+                                    case2 k.t.l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            business logic :
+
+                            Datetime unhandled.
+
+                            Courses standard (ta dialegei apo lista, den ta grafei)
+
+                            assignments (eite san ta courses), 
+                            na ta vazei o trainer.if he ' s a trainer to assign some assignments to a course, (an einai C# p.x "Hello World")  // kako, pali dates. 
+
+                                                                                                                                                                                                                                    // Do you want to input new courses, or choose from the existing ones. (synthetics);
+
+
+                            Do you want to input a trainers or a students info. ki ama ftasei max (me erwthseis do you want to input another Y/any key) "all trainers/students 
+                            registered do you want to add the other(trainer/student)"
+                            
+
+
+
+                        

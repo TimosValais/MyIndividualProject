@@ -15,19 +15,15 @@ namespace MyIndividualProject
             CommandPromptUtils cpUtils = new CommandPromptUtils();
             //Console.WriteLine(trainer);
             //Console.WriteLine(trainer2);
-            List<Trainer> trainers = new List<Trainer>();
-            trainers.Add(cpUtils.GetTrainerDetails());
-            cpUtils.PrintTrainersList(trainers);
-            List<Course> courses = new List<Course>();
-            courses.Add(cpUtils.GetCourseDetails());
-            cpUtils.PrintCoursesList(courses);
-            //int i = 0;
-            //while(i < 8)
-            //{
-            //    trainers.Add(cpUtils.GetTrainerDetails());
-            //    i++;
-            //}
+            //List<Trainer> trainers = new List<Trainer>();
+            /*trainers.Add*/cpUtils.GetTrainerDetails();
+
             //cpUtils.PrintTrainersList(trainers);
+            //List<Course> courses = new List<Course>();
+            //courses.Add(cpUtils.GetCourseDetails());
+            //cpUtils.PrintCoursesList(courses);
+
+
         }
 
         // Create appropriate methods in order to ask

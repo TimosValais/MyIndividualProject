@@ -13,14 +13,22 @@ namespace MyIndividualProject.BusinessLogic
     {
         
 
-        public Trainer GetTrainerDetails(List<string> subjects = null)
+        public object GetTrainerDetails(List<string> subjects = null)
         {
-            if (subjects == null) subjects = new List<string>() { "C#", "Java", "Python", "Javascript", "PHP" };
-            Trainer trainer = new Trainer();
-            trainer.FirstName = AskDetail("Give me your first name");
-            trainer.LastName  = AskDetail("Give me your last name");
-            trainer.Subject   = AskDetail("Give me the subject that you teach", subjects);
-            return (trainer);
+            List<Trainer> trainers = new List<Trainer>();
+            for (int i = 0; i < 3; i++)
+            {
+                if (subjects == null) subjects = new List<string>() { "C#", "Java", "Python", "Javascript", "PHP" };
+                Trainer trainer = new Trainer();
+                trainer.FirstName = AskDetail("Give me your first name");
+                trainer.LastName = AskDetail("Give me your last name");
+                trainer.Subject = AskDetail("Give me the subject that you teach", subjects);
+                trainers.Add(trainer);
+                
+
+            }
+
+            return (trainers[2]);
         }
 
         public Course GetCourseDetails()
@@ -41,7 +49,7 @@ namespace MyIndividualProject.BusinessLogic
             student.FirstName = AskDetail("Give me your first name");
             student.LastName = AskDetail("Give me the course's stream");
             student.DateOfBirth = ConvertToDateTime(AskDetail("Give me the type of the course")); //convert to DateTime probably
-            student.TuitionFees = AskDetail("Give me the starting date of the course"); 
+            student.TuitionFees = Convert.ToDouble(AskDetail("Give me the starting date of the course")); 
             
 
             return (student);
@@ -97,7 +105,7 @@ namespace MyIndividualProject.BusinessLogic
 
         private string SelectFromListOfStrings (List<string> elements)
         {
-            string result = "";
+            string result;
             int counter = 1;
             Console.WriteLine();
             foreach (var item in elements)
@@ -114,9 +122,9 @@ namespace MyIndividualProject.BusinessLogic
             return (result);
         }
 
-        public void PrintTrainersList(List<Trainer> trainers)
+        public void PrintTAList(List<object> listObjects)
         {
-            foreach (var item in trainers)
+            foreach (var item in listObjects)
             {
                 Console.WriteLine(item);
             }
@@ -132,13 +140,19 @@ namespace MyIndividualProject.BusinessLogic
 
         public DateTime ConvertToDateTime (string dateTime)
         {
-            DateTime date = DateTime.Parse(dateTime);
-            while (date == default)
+
+            bool isItADate;
+            DateTime date;
+            isItADate = DateTime.TryParse(dateTime, out date);
+
+
+            while (dateTime == null || isItADate == false)
             {
-                Console.Write("Please Give a valid date format: ");
+                Console.Write("Please enter a valid date (DD/MM/YYYY): ");
                 dateTime = Console.ReadLine();
-                date = DateTime.Parse(dateTime);
+                isItADate = DateTime.TryParse(dateTime, out date);
             }
+            date = DateTime.Parse(dateTime);
             return (date);
         }
     }

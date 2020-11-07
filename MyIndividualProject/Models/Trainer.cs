@@ -10,7 +10,7 @@ namespace MyIndividualProject.Models
     {
         private string _firstname; 
         private string _lastname;
-        private string _subject;
+        private string _subject; // must be from the courses list. could be composition
 
         public string FirstName 
         { 
@@ -29,15 +29,6 @@ namespace MyIndividualProject.Models
             set { this._subject = value; }
         }
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
 
         public override string ToString()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyIndividualProject.Models
 {
-    class Course
+     public class Course
     {
         private string _title;
         private string _stream;
@@ -44,6 +44,15 @@ namespace MyIndividualProject.Models
             set { this._enddate = value; }
         }
 
+        public Course()
+        {
+            this._title = "CB Generic";
+            this._stream = "Generic Programming Language";
+            this._type = "Generic Time";
+            this._startdate = DateTime.Parse("1 / 1 / 1821");
+            this._enddate = DateTime.Parse("25 / 03 / 1821");
+
+        }
         public override string ToString()
         {
             return ($"Course Title: {_title}\tCourse Stream: {_stream}\tCourse Type: {_type}\tCourse starts at: {_startdate}\tCourse ends at: {_enddate}");
