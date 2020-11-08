@@ -16,7 +16,7 @@ namespace MyIndividualProject.BusinessLogic
         private protected string AskDetail(string message, List<string> subjects = null)
         {
             string result;
-            Console.Write(message + ": ");
+            Console.Write(message + ": \n");
             if (subjects != null)
             {
                 // ask for the subject the trainer teaches

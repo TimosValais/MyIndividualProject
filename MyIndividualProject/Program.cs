@@ -13,23 +13,24 @@ namespace MyIndividualProject
         static void Main(string[] args)
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
+            CourseUtils courseUtils = new CourseUtils();
             //Console.WriteLine(trainer);
             //Console.WriteLine(trainer2);
             //List<Trainer> trainers = new List<Trainer>();
             //trainers.AddcpUtils.GetTrainerDetails();
             //List<Student> students = new List<Student>();
             List<Course> courses = new List<Course>();
-            courses = cpUtils.GetListOfCourses();
-            List<Student> students = new List<Student>();
-            students = cpUtils.GetListOfStudents(courses);
+            courses = courseUtils.GetListOfCourses();
+            //List<Student> students = new List<Student>();
+            //students = cpUtils.GetListOfStudents(courses);
 
 
 
-            foreach (var item in students)
-            {
-                Console.WriteLine(item);
+            //foreach (var item in students)
+            //{
+            //    Console.WriteLine(item);
 
-            }
+            //}
             
 
 

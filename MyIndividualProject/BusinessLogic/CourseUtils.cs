@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
@@ -14,55 +15,43 @@ namespace MyIndividualProject.BusinessLogic
         public List<Course> GetListOfCourses()
         {
             string option1 = "Use synthetic courses";
-            string option2 = "Choose from our colection of programming courses";
+            string option2 = "Choose from our collection of programming courses";
             string option3 = "Add your own courses";
+            string option;
+            List<Course> listOfCourses = new List<Course>();
+
 
             Console.WriteLine("Time to add the courses of the school!\n" +
-                $"Would you like to : \n" +
-                $"{ConvertToInt(SelectFromListOfStrings(new List<string>(){option1, option2, option3}))}");
+                $"Would you like to : ");
+            option = SelectFromListOfStrings(new List<string>() { option1, option2, option3 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            Console.Write("Time to add the courses of the school\ntype " +
-                "S to use synthetic courses, or type any key to add your own: ");
-            string choice = Console.ReadLine();
-            List<Course> listOfCourses = new List<Course>();
-            if (choice == "S")
+            switch (option)
             {
-                listOfCourses = GetSyntheticCourses();
+                case ("Use synthetic courses"):
+                    listOfCourses = GetSyntheticCourses();
+                    break;
+                case ("Choose from our collection of programming courses"):
+                    string continuing = "";
+                    while (continuing != "N")
+                    {
+                        listOfCourses.Add(ChoosePremadeCourse());
+                        Console.Write("Press any key to choose another course, or N to move on: ");
+                        continuing = Console.ReadLine();
+                    }
+
+
+                    break;
+                case ("Add your own courses"):
+                    string choice = "";
+                    while (choice != "N")
+                    {
+                        Console.WriteLine("Please enter the Data of the course you want to add");
+                        listOfCourses.Add(GetCourseDetails());
+                        Console.Write("Press any key to add another course, or N to move on: ");
+                        choice = Console.ReadLine();
+                    }
+                    break;
             }
-            else
-            {
-                string choice2 = "";
-                while (choice2 != "N")
-                {
-                    Console.WriteLine("Please enter the Data of the course you want to add");
-                    listOfCourses.Add(GetCourseDetails());
-                    Console.Write("Press any key to add another course, or N to continue");
-                    choice2 = Console.ReadLine();
-                }
-
-            }
-
-
 
             for (int i = 0; i < listOfCourses.Count; i++)
             {
@@ -71,6 +60,36 @@ namespace MyIndividualProject.BusinessLogic
 
             return (listOfCourses);
 
+
+
+        }
+
+        public Course ChoosePremadeCourse()
+        {
+
+            Course course = new Course()
+            {
+                Title = AskDetail("Choose one of these titles",
+                               new List<string> { "CB 12", "CB 11" }),
+                Stream = AskDetail("Choose one of these streams",
+                    new List<string> { "C#", "Java", "Javascript", "C++", "Python" }),
+                Type = AskDetail("Choose one of these types",
+                               new List<string> { "Full Time", "Part Time" }),
+                StartDate = ConvertToDateTime
+                ($"{AskDetail("Choose the starting date",new List<string> { "05/10/2020", "19/10/2020", "05/02/2021", "19/02/2021" })}")
+            };
+
+            if (course.Type == "Full Time")
+            {
+                course.EndDate = course.StartDate.AddDays(90);
+            }
+            else
+            {
+                course.EndDate = course.StartDate.AddDays(180);
+            }
+            
+
+            return (course);
         }
         public Course GetCourseDetails()
         {
