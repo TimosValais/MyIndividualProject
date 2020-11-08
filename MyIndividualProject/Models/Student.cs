@@ -13,6 +13,7 @@ namespace MyIndividualProject.Models
         private string _lastname;
         private DateTime _dateofbirth;
         private double _tuitionfees;
+        private List<Course> _coursesofstudent;
         public string FirstName
         {
             get { return (this._firstname); }
@@ -34,9 +35,6 @@ namespace MyIndividualProject.Models
             set { this._tuitionfees = value; }
         }
 
-
-        private List<Course> _coursesofstudent;
-
         public List<Course> CoursesOfStudent
         {
             get { return _coursesofstudent; }
@@ -46,13 +44,26 @@ namespace MyIndividualProject.Models
 
         public Student()
         {
-            this._firstname = "Student First Name";
-            this._lastname = "Student Last Name";
+            this._firstname = "Generic First Name";
+            this._lastname = "Generic Last Name";
             this._dateofbirth = DateTime.Parse("01-01-1821");
             this._tuitionfees = 400.00F;
-            Course course = new Course();
-            this._coursesofstudent.Add(course);
-            
+            //Course course = new Course();
+            //this._coursesofstudent.Add(new Course());
+            List<Course> courses = new List<Course>();
+            courses.Add(new Course());
+            this._coursesofstudent = courses;
+
+        }
+
+        public Student (string firstName, string lastName, DateTime dateOfBirth,
+                       double tuitionFees, List<Course> studentCourses)
+        {
+            this._firstname = firstName ;
+            this._lastname = lastName ;
+            this._dateofbirth = dateOfBirth ;
+            this._tuitionfees = tuitionFees ;
+            this._coursesofstudent = studentCourses ;
         }
 
         public Student(Course course1, Course course2)
@@ -65,7 +76,24 @@ namespace MyIndividualProject.Models
         }
         public override string ToString()
         {
-            return ($"Student Name: {_firstname} {_lastname}\tDate of Birth: {_dateofbirth}\tTuition Fees: {_tuitionfees}");
+
+            //foreach (var item in this._coursesofstudent)
+            //{
+            //    Console.WriteLine(item.Title);
+            //    Console.WriteLine(item.Stream);
+            //    Console.WriteLine(item.Type);
+            //    Console.WriteLine(item.StartDate);
+            //    Console.WriteLine(item.EndDate);
+            //}
+
+
+
+            //foreach (var item in _coursesofstudent)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            return ($"Student Name: {_firstname} {_lastname}\nDate of Birth: {_dateofbirth}\nTuition Fees: {_tuitionfees}");
+
         }
     }
 }

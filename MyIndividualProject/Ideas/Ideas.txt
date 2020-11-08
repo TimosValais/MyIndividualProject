@@ -83,4 +83,36 @@
 
 
 
+
+
+                            pws tha trexei to programma : 
+                            1st option : 
+
+                            trainer - orizei ta courses apo lista - student dialegei course kai assignments (ap auta pou exei valei o trainer)
+
+                            2nd option :
+
+                            trainer or student, dialegoun apo lista courses kai assignments
+
+                            3rd option :
+
+                            User - chooses the courses of the school (or uses synthetic), chooses the assignments of the courses (or uses synthetic)
+                            then, adds the trainers, assigns them to a course etc, and adds the students, assigns them to the courses etc. prints lists.
+
+                            Hello, Would you like to add a student or a trainer (press T for trainer or any key for student)
+
+                            Path 1 Trainer : 
+
+
+
+
+
+
+
+
+
+                            Path 2 Student : 
+
+
+
                         

@@ -16,12 +16,30 @@ namespace MyIndividualProject
             //Console.WriteLine(trainer);
             //Console.WriteLine(trainer2);
             //List<Trainer> trainers = new List<Trainer>();
-            /*trainers.Add*/cpUtils.GetTrainerDetails();
+            //trainers.AddcpUtils.GetTrainerDetails();
+            //List<Student> students = new List<Student>();
+            List<Course> courses = new List<Course>();
+            courses = cpUtils.GetListOfCourses();
+            List<Student> students = new List<Student>();
+            students = cpUtils.GetListOfStudents(courses);
+
+
+
+            foreach (var item in students)
+            {
+                Console.WriteLine(item);
+
+            }
+            
+
+
+            //students.Add(cpUtils.GetStudentDetails());
 
             //cpUtils.PrintTrainersList(trainers);
             //List<Course> courses = new List<Course>();
             //courses.Add(cpUtils.GetCourseDetails());
             //cpUtils.PrintCoursesList(courses);
+            
 
 
         }

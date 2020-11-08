@@ -8,11 +8,11 @@ namespace MyIndividualProject.Models
 {
      public class Course
     {
-        private string _title;
-        private string _stream;
-        private string _type;
-        private DateTime _startdate;
-        private DateTime _enddate;
+        private string _title ;
+        private string _stream ;
+        private string _type ;
+        private DateTime _startdate ;
+        private DateTime _enddate ;
 
         public string Title
         {
@@ -44,18 +44,27 @@ namespace MyIndividualProject.Models
             set { this._enddate = value; }
         }
 
-        public Course()
+        public  Course()
         {
             this._title = "CB Generic";
             this._stream = "Generic Programming Language";
-            this._type = "Generic Time";
+            this._type = "Generic Type";
             this._startdate = DateTime.Parse("1 / 1 / 1821");
             this._enddate = DateTime.Parse("25 / 03 / 1821");
 
         }
+        public Course(string title, string stream, string type, DateTime startDate, DateTime endDate)
+        {
+            this._title = title;
+            this._stream = stream;
+            this._type = type;
+            this._startdate = startDate;
+            this._enddate = endDate;
+
+        }
         public override string ToString()
         {
-            return ($"Course Title: {_title}\tCourse Stream: {_stream}\tCourse Type: {_type}\tCourse starts at: {_startdate}\tCourse ends at: {_enddate}");
+            return ($"Course Title: {_title}\nCourse Stream: {_stream}\nCourse Type: {_type}\nCourse starts at: {_startdate}\nCourse ends at: {_enddate}");
         }
     }
 }
