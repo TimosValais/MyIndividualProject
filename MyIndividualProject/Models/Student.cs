@@ -48,8 +48,6 @@ namespace MyIndividualProject.Models
             this._lastname = "Generic Last Name";
             this._dateofbirth = DateTime.Parse("01-01-1821");
             this._tuitionfees = 400.00F;
-            //Course course = new Course();
-            //this._coursesofstudent.Add(new Course());
             List<Course> courses = new List<Course>();
             courses.Add(new Course());
             this._coursesofstudent = courses;

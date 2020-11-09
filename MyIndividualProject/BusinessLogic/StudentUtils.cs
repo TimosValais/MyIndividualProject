@@ -12,11 +12,12 @@ namespace MyIndividualProject.BusinessLogic
     {
         public List<Student> GetListOfStudents(List<Course> courses)
         {
-            Console.Write("Now, let's add our Students!\nWould you like to : ");
-
-            string choice = Console.ReadLine();
+            Console.Write("Now, let's add our Students!\nWould you like to : \n");
+            string option1 = "Get Synthetic Students";
+            string option2 = "Add your own students";
+            string choice = SelectFromListOfStrings(new List<string>() { option1, option2, });
             List<Student> listOfStudents = new List<Student>();
-            if (choice == "S")
+            if (choice == option1)
             {
                 listOfStudents = GetSyntheticStudents(courses);
             }
@@ -27,7 +28,7 @@ namespace MyIndividualProject.BusinessLogic
                 {
                     Console.WriteLine("Please enter the Data of the student you want to add");
                     listOfStudents.Add(GetStudentDetails(courses));
-                    Console.Write("Press any key to add another course,\n or type N and press Enter to continue");
+                    Console.Write("Press any key to add another student,\n or type N and press Enter to continue");
                     choice2 = Console.ReadLine();
                 }
 

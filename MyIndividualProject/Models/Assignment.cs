@@ -11,8 +11,8 @@ namespace MyIndividualProject.Models
         private string _title;
         private string _description;
         private DateTime _subdatetime;
-        private string _oralmark;
-        private string _totalmark;
+        private float _oralmark;
+        private float _totalmark;
 
         public string Title
         {
@@ -32,12 +32,12 @@ namespace MyIndividualProject.Models
             set { this._subdatetime = value; }
         }
 
-        public string OralMark
+        public float OralMark
         {
             get { return (this._oralmark); }
             set { this._oralmark = value; }
         }
-        public string TotalMark
+        public float TotalMark
         {
             get { return (this._totalmark); }
             set { this._totalmark = value; }

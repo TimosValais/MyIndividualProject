@@ -10,7 +10,7 @@ namespace MyIndividualProject.Models
     {
         private string _firstname; 
         private string _lastname;
-        private string _subject; // must be from the courses list. could be composition
+        private List<string> _subjects; // must be from the courses list. could be composition
 
         public string FirstName 
         { 
@@ -23,11 +23,36 @@ namespace MyIndividualProject.Models
             set { this._lastname = value; }
         }
 
-        public string Subject
+        public List<string> Subjects
         {
-            get { return (this._subject); }
-            set { this._subject = value; }
+            get { return (this._subjects); }
+            set { this._subjects = value; }
         }
+
+        private List<Course> _trainercourses;
+
+        public List<Course> TrainerCourses
+        {
+            get { return _trainercourses; }
+            set { _trainercourses = value; }
+        }
+
+
+        public Trainer()
+        {
+            this._firstname = "Mr First Name";
+            this._lastname = "Mr Last Name";
+            List<Course> courses = new List<Course>();
+            courses.Add(new Course());
+            this._trainercourses = courses;
+            foreach (var item in courses)
+            {
+                this._subjects.Add($"{item.Title} {item.Stream} {item.Type}");
+
+            }
+            
+        }
+
 
 
         public override string ToString()
