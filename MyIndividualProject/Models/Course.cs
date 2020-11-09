@@ -62,6 +62,23 @@ namespace MyIndividualProject.Models
             this._enddate = endDate;
 
         }
+
+        public  bool IsEqual(Course course1, Course course2)
+        {
+            if (course1.Title == course2.Title &&
+                course1.Stream == course2.Stream &&
+                course1.Type == course2.Type &&
+                course1.StartDate == course2.StartDate &&
+                course1.EndDate == course2.EndDate)
+            {
+                return (true);
+            }
+            else
+            {
+                return (false);
+            }
+                
+        }
         public override string ToString()
         {
             return ($"Course Title: {_title}\nCourse Stream: {_stream}\nCourse Type: {_type}\nCourse starts at: {_startdate}\nCourse ends at: {_enddate}");

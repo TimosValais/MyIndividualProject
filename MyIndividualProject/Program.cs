@@ -14,6 +14,7 @@ namespace MyIndividualProject
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
             CourseUtils courseUtils = new CourseUtils();
+            StudentUtils studentUtils = new StudentUtils();
             //Console.WriteLine(trainer);
             //Console.WriteLine(trainer2);
             //List<Trainer> trainers = new List<Trainer>();
@@ -21,8 +22,27 @@ namespace MyIndividualProject
             //List<Student> students = new List<Student>();
             List<Course> courses = new List<Course>();
             courses = courseUtils.GetListOfCourses();
+            List<Student> students = new List<Student>();
+            students = studentUtils.GetListOfStudents(courses);
+
+            CourseStudents studernsPerCourse = new CourseStudents();
+
             //List<Student> students = new List<Student>();
             //students = cpUtils.GetListOfStudents(courses);
+            foreach (var item in courses)
+            {
+                
+                Console.WriteLine($"The {item} has these students : ");
+                List <string> listOfStudents = studernsPerCourse.StudentsPerCourse(item, students);
+                for (int i = 0; i < listOfStudents.Count; i++)
+                {
+                    Console.WriteLine(listOfStudents[i]);
+
+                }
+            }
+
+            //courseUtils.CheckForDuplicateCourses(courses);
+            //courseUtils.PrintCoursesList(courses);
 
 
 
@@ -44,6 +64,7 @@ namespace MyIndividualProject
 
 
         }
+        
 
         // Create appropriate methods in order to ask
         // from the user data for the four main classes

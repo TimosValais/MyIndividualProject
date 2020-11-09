@@ -12,8 +12,8 @@ namespace MyIndividualProject.BusinessLogic
     {
         public List<Student> GetListOfStudents(List<Course> courses)
         {
-            Console.Write("Now, let's add our Students!\nType " +
-                "S to use synthetic courses, or type any key to add your own: ");
+            Console.Write("Now, let's add our Students!\nWould you like to : ");
+
             string choice = Console.ReadLine();
             List<Student> listOfStudents = new List<Student>();
             if (choice == "S")
@@ -45,6 +45,7 @@ namespace MyIndividualProject.BusinessLogic
                 DateOfBirth = DateTime.Parse("19/ 10 / 1988"),
                 CoursesOfStudent = courses
             };
+
             List<Student> syntheticStudents = new List<Student> { student1, student2 };
 
             return (syntheticStudents);

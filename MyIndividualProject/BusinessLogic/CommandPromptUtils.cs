@@ -68,6 +68,50 @@ namespace MyIndividualProject.BusinessLogic
 
         }
 
+        public List<Course> CheckForDuplicateCourses (List<Course> listOfCourses)
+        {
+            Console.WriteLine("Checking For Duplicates");
+            //for (int i = 0; i < listOfCourses.Count; i++)
+            //{
+            //    for (int j = 0; j < listOfCourses.Count && j != i; j++)
+            //    {
+                    
+            //        if (listOfCourses[i] == listOfCourses[j])
+            //        {
+            //            listOfCourses.Remove(listOfCourses[j]);
+            //        }
+            //    }
+            //}
+
+            int i = 0;
+            while (i < listOfCourses.Count)
+            {
+                for (int j = 0; (j < listOfCourses.Count && j != i); j++)
+                {
+
+                    if (listOfCourses[i].Title == listOfCourses[j].Title
+                        && listOfCourses[i].Stream == listOfCourses[j].Stream
+                        && listOfCourses[i].Type == listOfCourses[j].Type
+                        && listOfCourses[i].StartDate == listOfCourses[j].StartDate
+                        && listOfCourses[i].EndDate == listOfCourses[j].EndDate)
+                    {
+                        listOfCourses.Remove(listOfCourses[j]);
+                        
+                    }
+                }
+                i++;
+            }
+                
+            
+
+            //if (listOfCourses[0] == listOfCourses[1])
+            //    Console.WriteLine("true");
+            //else
+            //    Console.WriteLine("false");
+            return (listOfCourses);
+            
+        }
+
         public DateTime ConvertToDateTime (string dateTime)
         {
 
