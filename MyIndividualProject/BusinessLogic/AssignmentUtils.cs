@@ -42,7 +42,7 @@ namespace MyIndividualProject.BusinessLogic
             {
                 Title = AskDetail("Give me the assignments title"),
                 Description = AskDetail("Give me the assignments description"),
-                SubmissionDateTime = ConvertToDateTime($"{AskDetail("Submit until")}"), //convert to DateTime probably
+                SubmissionDateTime = ConvertToDateTime($"{AskDetail("Submit until (DD/MM/YY HH:MM:SS)")}"), //convert to DateTime probably
                 OralMark = ConvertToFloat($"{AskDetail("Give me the oral mark of the assignment")}"),
                 TotalMark = ConvertToFloat($"{AskDetail("Give me the total mark of the assignment")}")
             };

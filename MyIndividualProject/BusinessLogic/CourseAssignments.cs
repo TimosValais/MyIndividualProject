@@ -48,12 +48,12 @@ namespace MyIndividualProject.BusinessLogic
             this._assignmentincourse = assignmentInCourse;
             return (assignmentInCourse);
         }
-        public void PrintAllStudentsPerAllCourses(List<Course> courses, List<Assignment> assignments)
+        public void PrintAllAssignmentsPerAllCourses(List<Course> courses, List<Assignment> assignments)
         {
             foreach (var item in courses)
             {
 
-                Console.WriteLine($"This course:\n {item} \nHas these students :\n");
+                Console.WriteLine($"This course:\n {item} \nHas these assingments :\n");
                 List<string> listOfAssignments = AssignmentsPerCourse(item, assignments);
                 for (int i = 0; i < listOfAssignments.Count; i++)
                 {

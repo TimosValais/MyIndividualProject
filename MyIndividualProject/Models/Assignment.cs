@@ -63,7 +63,7 @@ namespace MyIndividualProject.Models
 
         public override string ToString()
         {
-            return ($"Assignment Title: {_title}\tDescription of the Assignment: {_description}\tSubmission Date and Time: {_subdatetime}\tOral Mark: {_oralmark}\tTotal Mark: {_totalmark}");
+            return ($"Assignment Title: {_title}\tDescription of the Assignment: {_description}\tSubmission Date And Time: {_subdatetime}\tOral Mark: {_oralmark}\tTotal Mark: {_totalmark}");
         }
     }
 }

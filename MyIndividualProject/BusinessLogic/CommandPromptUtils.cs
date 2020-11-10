@@ -84,53 +84,22 @@ namespace MyIndividualProject.BusinessLogic
                
             }
             return (isItADuplicate);
+        }
 
-            //for (int i = 0; i < listOfCourses.Count; i++)
-            //{
-            //    for (int j = 0; j < listOfCourses.Count && j != i; j++)
-            //    {
+        public bool CheckForDuplicateStrings (List<string> listOfStrings, string string1)
+        {
+            bool isItADuplicate = false;
+            int i = 0;
+            while (i < listOfStrings.Count)
+            {
+                if (StringIsEqual(string1, listOfStrings[i]) == true)
+                {
+                    isItADuplicate = true;
+                }
+                i++;
 
-            //        if (listOfCourses[i] == listOfCourses[j])
-            //        {
-            //            listOfCourses.Remove(listOfCourses[j]);
-            //        }
-            //    }
-            //}
-
-
-
-
-            //while (i < listOfCourses.Count)
-            //{
-            //    for (int j = 0; (j < listOfCourses.Count ); j++)
-            //    {
-
-            //        if (IsEqual(listOfCourses[1], listOfCourses[j]) == true)
-            //            //listOfCourses[i].Title == listOfCourses[j].Title
-            //            //&& listOfCourses[i].Stream == listOfCourses[j].Stream
-            //            //&& listOfCourses[i].Type == listOfCourses[j].Type
-            //            //&& listOfCourses[i].StartDate == listOfCourses[j].StartDate
-            //            //&& listOfCourses[i].EndDate == listOfCourses[j].EndDate)
-            //        {
-            //            listOfCourses.Remove(listOfCourses[j]);
-
-            //        }
-            //        else
-            //        {
-
-            //        }
-            //    }
-            //    i++;
-            //}
-
-
-
-            //if (listOfCourses[0] == listOfCourses[1])
-            //    Console.WriteLine("true");
-            //else
-            //    Console.WriteLine("false");
-            //return (listOfCourses);
-            
+            }
+            return (isItADuplicate);
         }
 
         public DateTime ConvertToDateTime (string dateTime)
@@ -208,6 +177,18 @@ namespace MyIndividualProject.BusinessLogic
                 return (false);
             }
 
+        }
+
+        public bool StringIsEqual (string string1, string string2)
+        {
+            if (string1 == string2)
+            {
+                return (true);
+            }
+            else
+            {
+                return (false);
+            }
         }
 
 

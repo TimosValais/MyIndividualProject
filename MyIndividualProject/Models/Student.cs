@@ -75,22 +75,8 @@ namespace MyIndividualProject.Models
         public override string ToString()
         {
 
-            //foreach (var item in this._coursesofstudent)
-            //{
-            //    Console.WriteLine(item.Title);
-            //    Console.WriteLine(item.Stream);
-            //    Console.WriteLine(item.Type);
-            //    Console.WriteLine(item.StartDate);
-            //    Console.WriteLine(item.EndDate);
-            //}
 
-
-
-            //foreach (var item in _coursesofstudent)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            return ($"Student Name: {_firstname} {_lastname}\nDate of Birth: {_dateofbirth}\nTuition Fees: {_tuitionfees}");
+            return ($"Student Name: {_firstname} {_lastname}\nDate of Birth: {_dateofbirth :d}\nTuition Fees: {_tuitionfees}");
 
         }
     }

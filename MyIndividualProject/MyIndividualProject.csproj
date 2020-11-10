@@ -50,6 +50,7 @@
     <Compile Include="BusinessLogic\CourseUtils.cs" />
     <Compile Include="BusinessLogic\CourseStudents.cs" />
     <Compile Include="BusinessLogic\OrderOfOperations.cs" />
+    <Compile Include="BusinessLogic\StudentAssignment.cs" />
     <Compile Include="BusinessLogic\StudentUtils.cs" />
     <Compile Include="BusinessLogic\TrainerUtils.cs" />
     <Compile Include="Models\Assignment.cs" />

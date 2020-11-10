@@ -79,7 +79,6 @@ namespace MyIndividualProject.BusinessLogic
                 {
                     studentCourses.Add(newCourse);
                 }
-                //studentCourses.Add(SelectFromListOfCourses(courses));
                 Console.Write("Is the student enrolled in another course?\n" +
                 "Press Y to add another course from the list or\n" +
                 "press any key and Enter to continue: ");
@@ -92,6 +91,19 @@ namespace MyIndividualProject.BusinessLogic
 
             return (student);
 
+        }
+
+        public List<string> ListOfStudentsWithMoreCourses(List<Student> students)
+        {
+            List<string> listOfStudents = new List<string>();
+            foreach (var item in students)
+            {
+                if (item.CoursesOfStudent.Count > 1)
+                {
+                    listOfStudents.Add($"Student Name: {item.FirstName} {item.LastName}");
+                }
+            }
+            return (listOfStudents);
         }
 
     }
