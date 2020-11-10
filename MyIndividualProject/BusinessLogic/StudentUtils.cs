@@ -14,7 +14,7 @@ namespace MyIndividualProject.BusinessLogic
         {
             Console.Write("Now, let's add our Students!\nWould you like to : \n");
             string option1 = "Get Synthetic Students";
-            string option2 = "Add your own students";
+            string option2 = "Add your own Students";
             string choice = SelectFromListOfStrings(new List<string>() { option1, option2, });
             List<Student> listOfStudents = new List<Student>();
             if (choice == option1)
@@ -44,8 +44,12 @@ namespace MyIndividualProject.BusinessLogic
                 LastName = "Generic Last Name 2",
                 TuitionFees = 400.00F,
                 DateOfBirth = DateTime.Parse("19/ 10 / 1988"),
-                CoursesOfStudent = courses
+                //CoursesOfStudent = courses
             };
+            Random randomI = new Random();
+
+            student1.CoursesOfStudent.Add(courses[randomI.Next(0, courses.Count)]);
+            student2.CoursesOfStudent.Add(courses[randomI.Next(0, courses.Count)]);
 
             List<Student> syntheticStudents = new List<Student> { student1, student2 };
 
@@ -57,23 +61,28 @@ namespace MyIndividualProject.BusinessLogic
         {
             Student student = new Student();
             List<Course> studentCourses = new List<Course>();
-            student.FirstName = AskDetail("Give me your first name");
-            student.LastName = AskDetail("Give me the last name");
-            student.DateOfBirth = ConvertToDateTime($"{AskDetail("Give me your date of birth")}");
-            student.TuitionFees = ConvertToDouble($"{AskDetail("Give me your tuition fees")}");
+            student.FirstName = AskDetail("Give me the students First Name");
+            student.LastName = AskDetail("Give me the students Last Name");
+            student.DateOfBirth = ConvertToDateTime($"{AskDetail("Give me the students date of birth")}");
+            student.TuitionFees = ConvertToDouble($"{AskDetail("Give me the students tuition fees")}");
             Console.WriteLine("In which course is the student enrolled in?:");
             studentCourses.Add(SelectFromListOfCourses(courses));
             string choice;
             Console.Write("Is the student enrolled to another course?\n" +
-                "Press Y to add another course and choose from the list or\n" +
+                "Press Y to add another course from the list or\n" +
                 "press any key and Enter to continue: ");
             choice = Console.ReadLine();
             while (choice == "Y")
             {
-                studentCourses.Add(SelectFromListOfCourses(courses));
+                Course newCourse = SelectFromListOfCourses(courses);
+                if (CheckForDuplicateCourses(studentCourses, newCourse) == false)
+                {
+                    studentCourses.Add(newCourse);
+                }
+                //studentCourses.Add(SelectFromListOfCourses(courses));
                 Console.Write("Is the student enrolled in another course?\n" +
-                "Press Y to add another course and choose from the list or\n" +
-                "press any key and Enter to continue");
+                "Press Y to add another course from the list or\n" +
+                "press any key and Enter to continue: ");
                 choice = Console.ReadLine();
 
             }

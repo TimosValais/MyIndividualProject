@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\AssignmentUtils.cs" />
     <Compile Include="BusinessLogic\CommandPromptUtils.cs" />
+    <Compile Include="BusinessLogic\CourseAssignments.cs" />
+    <Compile Include="BusinessLogic\CourseTrainers.cs" />
     <Compile Include="BusinessLogic\CourseUtils.cs" />
     <Compile Include="BusinessLogic\CourseStudents.cs" />
     <Compile Include="BusinessLogic\OrderOfOperations.cs" />

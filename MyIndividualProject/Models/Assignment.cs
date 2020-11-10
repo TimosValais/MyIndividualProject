@@ -43,6 +43,24 @@ namespace MyIndividualProject.Models
             set { this._totalmark = value; }
         }
 
+        private List<Course> _coursesofassignment;
+
+        public List<Course> CoursesOfAssignment
+        {
+            get { return _coursesofassignment; }
+            set { _coursesofassignment = value; }
+        }
+
+        public Assignment()
+        {
+            this._title = "Generic Assingment";
+            this._description = "This is a generic assignment";
+            this._subdatetime = DateTime.Parse("12/12/2020 23:59:59");
+            this._oralmark = 20.0f;
+            this._totalmark = 80.0f;
+            this._coursesofassignment = new List<Course>(); 
+        }
+
         public override string ToString()
         {
             return ($"Assignment Title: {_title}\tDescription of the Assignment: {_description}\tSubmission Date and Time: {_subdatetime}\tOral Mark: {_oralmark}\tTotal Mark: {_totalmark}");

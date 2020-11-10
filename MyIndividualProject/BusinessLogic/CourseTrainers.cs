@@ -1,18 +1,14 @@
-﻿using MyIndividualProject.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Runtime;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using MyIndividualProject.Models;
 
 namespace MyIndividualProject.BusinessLogic
 {
-    class CourseStudents : CommandPromptUtils
+    class CourseTrainers : CommandPromptUtils
     {
-
         private Course _course;
 
         public Course Course
@@ -21,12 +17,12 @@ namespace MyIndividualProject.BusinessLogic
             set { _course = value; }
         }
 
-        private List<string> _studentsincourse;
+        private List<string> _trainersincourse;
 
-        public List<string> StudentsInCourse
+        public List<string> TrainersInCourse
         {
-            get { return _studentsincourse; }
-            set { _studentsincourse = value; }
+            get { return _trainersincourse; }
+            set { _trainersincourse = value; }
         }
 
 
@@ -67,57 +63,54 @@ namespace MyIndividualProject.BusinessLogic
         //    //}
         //}
 
-        public List<string> StudentsPerCourse(Course course, List<Student> students)
+        public List<string> TrainersPerCourse(Course course, List<Trainer> trainers)
         {
             bool hasTheCourse = true;
-            List<string> studentsInCourse = new List<string>();
+            List<string> trainersInCourse = new List<string>();
 
-            foreach (var item in students)
+            foreach (var item in trainers)
             {
-                for (int i = 0; i < item.CoursesOfStudent.Count; i++)
+                for (int i = 0; i < item.TrainerCourses.Count; i++)
                 {
-                    if (hasTheCourse == IsEqual(course, item.CoursesOfStudent[i]))
+                    if (hasTheCourse == IsEqual(course, item.TrainerCourses[i]))
                     {
-                        studentsInCourse.Add(item.FirstName + " " + item.LastName);
+                        trainersInCourse.Add(item.FirstName + " " + item.LastName);
                     }
 
                 }
 
             }
             this._course = course;
-            this._studentsincourse = studentsInCourse;
-            return (studentsInCourse);
+            this._trainersincourse = trainersInCourse;
+            return (trainersInCourse);
         }
 
-        public void PrintAllStudentsPerAllCourses(List<Course> courses, List<Student> students)
+        public void PrintAllTrainersPerAllCourses(List<Course> courses, List<Trainer> trainers)
         {
             foreach (var item in courses)
             {
 
-                Console.WriteLine($"This course:\n {item} \nHas these students :\n");
-                List<string> listOfStudents = StudentsPerCourse(item, students);
-                for (int i = 0; i < listOfStudents.Count; i++)
+                Console.WriteLine($"This course:\n {item} \nHas these trainers :\n");
+                List<string> listOfTrainers = TrainersPerCourse(item, trainers);
+                for (int i = 0; i < listOfTrainers.Count; i++)
                 {
-                    Console.WriteLine($"{listOfStudents[i]}\n");
+                    Console.WriteLine($"{listOfTrainers[i]}\n");
 
                 }
             }
         }
 
-        public void PrintAllStudentPerOneCourse(List<Course> courses, List<Student> students)
+        public void PrintAllTrainersPerOneCourse(List<Course> courses, List<Trainer> trainers)
         {
-            Console.WriteLine("Which Course's Students would you like to print? :");
+            Console.WriteLine("Which Course's Trainers would you like to print? :");
             Course course = SelectFromListOfCourses(courses);
-            List<string> studentsPerCourse = StudentsPerCourse(course, students);
+            List<string> trainersPerCourse = TrainersPerCourse(course, trainers);
             Console.WriteLine($"{course.Title} {course.Stream} {course.Type} has these students\n");
-            for (int i = 0; i < studentsPerCourse.Count; i++)
+            for (int i = 0; i < trainersPerCourse.Count; i++)
             {
-                Console.WriteLine($"{studentsPerCourse[i]}\n");
+                Console.WriteLine($"{trainersPerCourse[i]}\n");
 
             }
         }
-
-
-
     }
 }

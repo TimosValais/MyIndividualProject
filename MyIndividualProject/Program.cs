@@ -32,11 +32,11 @@ namespace MyIndividualProject
             foreach (var item in courses)
             {
                 
-                Console.WriteLine($"The {item} has these students : ");
+                Console.WriteLine($"This course:\n {item} \nHas these students :\n");
                 List <string> listOfStudents = studernsPerCourse.StudentsPerCourse(item, students);
                 for (int i = 0; i < listOfStudents.Count; i++)
                 {
-                    Console.WriteLine(listOfStudents[i]);
+                    Console.WriteLine($"{listOfStudents[i]}\n");
 
                 }
             }

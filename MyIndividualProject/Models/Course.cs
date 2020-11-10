@@ -81,7 +81,7 @@ namespace MyIndividualProject.Models
         }
         public override string ToString()
         {
-            return ($"Course Title: {_title}\nCourse Stream: {_stream}\nCourse Type: {_type}\nCourse starts at: {_startdate}\nCourse ends at: {_enddate}");
+            return ($"Course Title: {_title}\nCourse Stream: {_stream}\nCourse Type: {_type}\nCourse starts at: {_startdate:d}\nCourse ends at: {_enddate:d}");
         }
     }
 }

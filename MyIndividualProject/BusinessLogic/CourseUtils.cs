@@ -23,7 +23,7 @@ namespace MyIndividualProject.BusinessLogic
 
             Console.WriteLine("Time to add the courses of the school!\n" +
                 $"Would you like to : ");
-            option = SelectFromListOfStrings(new List<string>() { option1, option2, option3 });
+            option = SelectFromListOfStrings(new List<string>() { option1 , option2, option3 });
 
             switch (option)
             {
@@ -105,9 +105,12 @@ namespace MyIndividualProject.BusinessLogic
                 Title = AskDetail("Give me the course's title"),
                 Stream = AskDetail("Give me the course's stream"),
                 Type = AskDetail("Give me the type of the course"),
-                StartDate = ConvertToDateTime(AskDetail("Give me the starting date of the course")),
-                EndDate = ConvertToDateTime(AskDetail("Give me the ending date of the course"))
+                StartDate = ConvertToDateTime($"{AskDetail("Give me the starting date of the course")}"),
+                //EndDate = ConvertToDateTime(AskDetail("Give me the ending date of the course"))
             };
+
+            int duration = ConvertToInt($"{AskDetail("Please tell me how many days the course will last")}");
+            course.EndDate = course.StartDate.AddDays(duration);
 
             return (course);
         }

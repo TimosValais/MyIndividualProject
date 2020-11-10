@@ -43,8 +43,6 @@ namespace MyIndividualProject.Models
             this._firstname = "Mr First Name";
             this._lastname = "Mr Last Name";
             List<Course> courses = new List<Course>();
-            courses.Add(new Course());
-            this._trainercourses = courses;
             foreach (var item in courses)
             {
                 this._subjects.Add($"{item.Title} {item.Stream} {item.Type}");

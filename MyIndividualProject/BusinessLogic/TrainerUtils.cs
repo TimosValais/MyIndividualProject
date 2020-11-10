@@ -61,11 +61,18 @@ namespace MyIndividualProject.BusinessLogic
             {
                 FirstName = "Mr First Name 2",
                 LastName = "Generic Last Name 2",
-                TrainerCourses = courses
             };
-            foreach (var item in courses)
+            Random randomI = new Random();
+
+            trainer1.TrainerCourses.Add(courses[randomI.Next(0, courses.Count)]);
+            trainer2.TrainerCourses.Add(courses[randomI.Next(0, courses.Count)]);
+            foreach (var item in trainer2.TrainerCourses)
             {
                 trainer2.Subjects.Add($"{item.Title} {item.Stream} {item.Type}");
+            }
+            foreach (var item in trainer1.TrainerCourses)
+            {
+                trainer1.Subjects.Add($"{item.Title} {item.Stream} {item.Type}");
             }
 
             List<Trainer> syntheticTrainers = new List<Trainer> { trainer1, trainer2 };
@@ -83,14 +90,18 @@ namespace MyIndividualProject.BusinessLogic
             trainerCourses.Add(SelectFromListOfCourses(courses));
             string choice;
             Console.Write("Does the trainer teach another course?\n" +
-                "Press Y to add another course and choose from the list or\n" +
+                "Press Y to add another course from the list or\n" +
                 "press any key and Enter to continue");
             choice = Console.ReadLine();
             while (choice == "Y")
             {
-                trainerCourses.Add(SelectFromListOfCourses(courses));
-                Console.Write("Is the student enrolled to another course?\n" +
-                "Press Y to add another course and choose from the list or\n" +
+                Course newCourse = SelectFromListOfCourses(courses);
+                if (CheckForDuplicateCourses(trainerCourses, newCourse) == false)
+                {
+                    trainerCourses.Add(newCourse);
+                }
+                Console.Write("Does the trainer teach another course?\n" +
+                "Press Y to add another course from the list or\n" +
                 "press any key and Enter to continue");
                 choice = Console.ReadLine();
 
