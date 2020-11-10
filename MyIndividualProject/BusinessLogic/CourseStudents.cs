@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyIndividualProject.BusinessLogic
 {
-    class CourseStudents
+    class CourseStudents : CommandPromptUtils
     {
 
 
@@ -85,22 +85,7 @@ namespace MyIndividualProject.BusinessLogic
             return (studentsInCourse);
         }
 
-        public bool IsEqual(Course course1, Course course2)
-        {
-            if (course1.Title == course2.Title &&
-                course1.Stream == course2.Stream &&
-                course1.Type == course2.Type &&
-                course1.StartDate == course2.StartDate &&
-                course1.EndDate == course2.EndDate)
-            {
-                return (true);
-            }
-            else
-            {
-                return (false);
-            }
 
-        }
 
     }
 }

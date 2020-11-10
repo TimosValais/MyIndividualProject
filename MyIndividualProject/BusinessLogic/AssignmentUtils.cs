@@ -16,8 +16,8 @@ namespace MyIndividualProject.BusinessLogic
                 Title = AskDetail("Give me the assignments title"),
                 Description = AskDetail("Give me the assignments description"),
                 SubmissionDateTime = ConvertToDateTime(AskDetail("Submit until")), //convert to DateTime probably
-                OralMark = AskDetail("Give me the oral mark of the assignment"),
-                TotalMark = AskDetail("Give me the total mark of the assignment")
+                OralMark = ConvertToFloat(AskDetail("Give me the oral mark of the assignment")),
+                TotalMark = ConvertToFloat(AskDetail("Give me the total mark of the assignment"))
             };
             return (assignment);
 

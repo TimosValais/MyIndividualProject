@@ -57,7 +57,9 @@ namespace MyIndividualProject.Models
 
         public override string ToString()
         {
-            return ($"First Name: {_firstname}\tLast Name: {_lastname}\tSubject: {_subject}");
+
+            return ($"First Name: {_firstname}\tLast Name: {_lastname}\tSubject: ");
+
         }
 
 

@@ -34,7 +34,12 @@ namespace MyIndividualProject.BusinessLogic
                     string continuing = "";
                     while (continuing != "N")
                     {
-                        listOfCourses.Add(ChoosePremadeCourse());
+                        Course newCourse = ChoosePremadeCourse();
+                        if (CheckForDuplicateCourses(listOfCourses, newCourse) == false)
+                        {
+                            listOfCourses.Add(newCourse);
+                        }
+
                         Console.Write("Press any key to choose another course, or N to move on: ");
                         continuing = Console.ReadLine();
                     }
@@ -45,18 +50,20 @@ namespace MyIndividualProject.BusinessLogic
                     string choice = "";
                     while (choice != "N")
                     {
+                        
                         Console.WriteLine("Please enter the Data of the course you want to add");
-                        listOfCourses.Add(GetCourseDetails());
+                        Course newCourse =  GetCourseDetails();
+                        if (CheckForDuplicateCourses(listOfCourses, newCourse) == false)
+                        {
+                            listOfCourses.Add(newCourse);
+                        }
+                       
                         Console.Write("Press any key to add another course, or N to move on: ");
                         choice = Console.ReadLine();
                     }
                     break;
             }
 
-            for (int i = 0; i < listOfCourses.Count; i++)
-            {
-                Console.WriteLine(listOfCourses[i]);
-            }
 
             return (listOfCourses);
 

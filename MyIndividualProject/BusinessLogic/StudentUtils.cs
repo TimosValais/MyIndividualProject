@@ -28,7 +28,7 @@ namespace MyIndividualProject.BusinessLogic
                 {
                     Console.WriteLine("Please enter the Data of the student you want to add");
                     listOfStudents.Add(GetStudentDetails(courses));
-                    Console.Write("Press any key to add another student,\n or type N and press Enter to continue");
+                    Console.Write("Press any key to add another student,\n or type N and press Enter to continue: ");
                     choice2 = Console.ReadLine();
                 }
 
@@ -61,17 +61,17 @@ namespace MyIndividualProject.BusinessLogic
             student.LastName = AskDetail("Give me the last name");
             student.DateOfBirth = ConvertToDateTime($"{AskDetail("Give me your date of birth")}");
             student.TuitionFees = ConvertToDouble($"{AskDetail("Give me your tuition fees")}");
-            Console.WriteLine("In which course is the user enrolled to?:");
+            Console.WriteLine("In which course is the student enrolled in?:");
             studentCourses.Add(SelectFromListOfCourses(courses));
             string choice;
             Console.Write("Is the student enrolled to another course?\n" +
                 "Press Y to add another course and choose from the list or\n" +
-                "press any key and Enter to continue");
+                "press any key and Enter to continue: ");
             choice = Console.ReadLine();
             while (choice == "Y")
             {
                 studentCourses.Add(SelectFromListOfCourses(courses));
-                Console.Write("Is the student enrolled to another course?\n" +
+                Console.Write("Is the student enrolled in another course?\n" +
                 "Press Y to add another course and choose from the list or\n" +
                 "press any key and Enter to continue");
                 choice = Console.ReadLine();

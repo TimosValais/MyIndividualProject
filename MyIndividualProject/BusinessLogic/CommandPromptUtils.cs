@@ -68,14 +68,28 @@ namespace MyIndividualProject.BusinessLogic
 
         }
 
-        public List<Course> CheckForDuplicateCourses (List<Course> listOfCourses)
+        public bool CheckForDuplicateCourses (List<Course> listOfCourses, Course courseToCheck)
         {
-            Console.WriteLine("Checking For Duplicates");
+            bool isItADuplicate = false;
+            int i = 0;
+            Console.WriteLine("Checking For Duplicates...");
+            while (i < listOfCourses.Count)
+            {
+                if(IsEqual(courseToCheck, listOfCourses[i]) == true)
+                {
+                    Console.WriteLine("You have already added this course!");
+                    isItADuplicate = true;
+                }
+                i++;
+               
+            }
+            return (isItADuplicate);
+
             //for (int i = 0; i < listOfCourses.Count; i++)
             //{
             //    for (int j = 0; j < listOfCourses.Count && j != i; j++)
             //    {
-                    
+
             //        if (listOfCourses[i] == listOfCourses[j])
             //        {
             //            listOfCourses.Remove(listOfCourses[j]);
@@ -83,32 +97,39 @@ namespace MyIndividualProject.BusinessLogic
             //    }
             //}
 
-            int i = 0;
-            while (i < listOfCourses.Count)
-            {
-                for (int j = 0; (j < listOfCourses.Count && j != i); j++)
-                {
 
-                    if (listOfCourses[i].Title == listOfCourses[j].Title
-                        && listOfCourses[i].Stream == listOfCourses[j].Stream
-                        && listOfCourses[i].Type == listOfCourses[j].Type
-                        && listOfCourses[i].StartDate == listOfCourses[j].StartDate
-                        && listOfCourses[i].EndDate == listOfCourses[j].EndDate)
-                    {
-                        listOfCourses.Remove(listOfCourses[j]);
-                        
-                    }
-                }
-                i++;
-            }
-                
-            
+
+
+            //while (i < listOfCourses.Count)
+            //{
+            //    for (int j = 0; (j < listOfCourses.Count ); j++)
+            //    {
+
+            //        if (IsEqual(listOfCourses[1], listOfCourses[j]) == true)
+            //            //listOfCourses[i].Title == listOfCourses[j].Title
+            //            //&& listOfCourses[i].Stream == listOfCourses[j].Stream
+            //            //&& listOfCourses[i].Type == listOfCourses[j].Type
+            //            //&& listOfCourses[i].StartDate == listOfCourses[j].StartDate
+            //            //&& listOfCourses[i].EndDate == listOfCourses[j].EndDate)
+            //        {
+            //            listOfCourses.Remove(listOfCourses[j]);
+
+            //        }
+            //        else
+            //        {
+
+            //        }
+            //    }
+            //    i++;
+            //}
+
+
 
             //if (listOfCourses[0] == listOfCourses[1])
             //    Console.WriteLine("true");
             //else
             //    Console.WriteLine("false");
-            return (listOfCourses);
+            //return (listOfCourses);
             
         }
 
@@ -170,6 +191,23 @@ namespace MyIndividualProject.BusinessLogic
                 isItADate = float.TryParse(floatValue, out numericValue);
             }
             return (numericValue);
+        }
+
+        public bool IsEqual(Course course1, Course course2)
+        {
+            if (course1.Title == course2.Title &&
+                course1.Stream == course2.Stream &&
+                course1.Type == course2.Type &&
+                course1.StartDate == course2.StartDate &&
+                course1.EndDate == course2.EndDate)
+            {
+                return (true);
+            }
+            else
+            {
+                return (false);
+            }
+
         }
 
 

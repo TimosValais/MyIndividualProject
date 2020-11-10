@@ -41,6 +41,8 @@ namespace MyIndividualProject
                 }
             }
 
+            //cpUtils.CheckForDuplicateCourses(courses);
+
             //courseUtils.CheckForDuplicateCourses(courses);
             //courseUtils.PrintCoursesList(courses);
 
@@ -51,7 +53,7 @@ namespace MyIndividualProject
             //    Console.WriteLine(item);
 
             //}
-            
+
 
 
             //students.Add(cpUtils.GetStudentDetails());
@@ -60,11 +62,11 @@ namespace MyIndividualProject
             //List<Course> courses = new List<Course>();
             //courses.Add(cpUtils.GetCourseDetails());
             //cpUtils.PrintCoursesList(courses);
-            
+
 
 
         }
-        
+
 
         // Create appropriate methods in order to ask
         // from the user data for the four main classes
