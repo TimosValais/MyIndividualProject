@@ -72,6 +72,7 @@ namespace MyIndividualProject.Models
             this._coursesofstudent.Add(course2);
 
         }
+        
         public override string ToString()
         {
 

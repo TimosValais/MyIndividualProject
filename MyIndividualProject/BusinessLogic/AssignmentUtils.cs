@@ -93,5 +93,15 @@ namespace MyIndividualProject.BusinessLogic
             return (syntheticAssignments);
 
         }
+
+        public void PrintAssignmentList(List<Assignment> assignments)
+        {
+            foreach (var item in assignments)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+
     }
 }

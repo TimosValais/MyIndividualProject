@@ -118,5 +118,13 @@ namespace MyIndividualProject.BusinessLogic
             return (trainer);
 
         }
+
+        public void PrintTrainerList(List<Trainer> trainers)
+        {
+            foreach (var item in trainers)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }

@@ -42,12 +42,15 @@ namespace MyIndividualProject.Models
         {
             this._firstname = "Mr First Name";
             this._lastname = "Mr Last Name";
-            List<Course> courses = new List<Course>();
-            foreach (var item in courses)
-            {
-                this._subjects.Add($"{item.Title} {item.Stream} {item.Type}");
+            this._subjects = new List<string>();
+            this._trainercourses = new List<Course>();
 
-            }
+            //List<Course> courses = new List<Course>();
+            //foreach (var item in courses)
+            //{
+            //    this._subjects.Add($"{item.Title} {item.Stream} {item.Type}");
+
+            //}
             
         }
 

@@ -105,7 +105,7 @@ namespace MyIndividualProject.BusinessLogic
             Console.WriteLine("Which Course's Trainers would you like to print? :");
             Course course = SelectFromListOfCourses(courses);
             List<string> trainersPerCourse = TrainersPerCourse(course, trainers);
-            Console.WriteLine($"{course.Title} {course.Stream} {course.Type} has these students\n");
+            Console.WriteLine($"{course.Title} {course.Stream} {course.Type} has these trainers\n");
             for (int i = 0; i < trainersPerCourse.Count; i++)
             {
                 Console.WriteLine($"{trainersPerCourse[i]}\n");

@@ -9,7 +9,7 @@ namespace MyIndividualProject.BusinessLogic
 {
     class CourseAssignments : CommandPromptUtils
     {
-        private List<Assignment> _assignments;
+
 
         private Course _course;
 
@@ -68,7 +68,7 @@ namespace MyIndividualProject.BusinessLogic
             Console.WriteLine("Which Course's Assignments would you like to print? :");
             Course course = SelectFromListOfCourses(courses);
             List<string> assignmentsPerCourse = AssignmentsPerCourse(course, assignments);
-            Console.WriteLine($"{course.Title} {course.Stream} {course.Type} has these students\n");
+            Console.WriteLine($"{course.Title} {course.Stream} {course.Type} has these assignments\n");
             for (int i = 0; i < assignmentsPerCourse.Count; i++)
             {
                 Console.WriteLine($"{assignmentsPerCourse[i]}\n");

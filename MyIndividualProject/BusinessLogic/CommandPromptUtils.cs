@@ -68,6 +68,25 @@ namespace MyIndividualProject.BusinessLogic
 
         }
 
+        public Student SelectFromListOfStudents(List<Student> students)
+        {
+            Student result;
+            int counter = 1;
+            foreach (var item in students)
+            {
+                Console.WriteLine($"{counter++}. {item}");
+            }
+            int choice = ConvertToInt(Console.ReadLine());
+            while (choice > students.Count || choice <= 0)
+            {
+                Console.Write("Please choose one of the given choices: ");
+                choice = ConvertToInt(Console.ReadLine());
+            }
+            result = students.ElementAt(choice - 1); // elements[choice - 1];
+            return (result);
+
+        }
+
         public bool CheckForDuplicateCourses (List<Course> listOfCourses, Course courseToCheck)
         {
             bool isItADuplicate = false;

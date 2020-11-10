@@ -12,34 +12,36 @@ namespace MyIndividualProject
     {
         static void Main(string[] args)
         {
-            CommandPromptUtils cpUtils = new CommandPromptUtils();
-            CourseUtils courseUtils = new CourseUtils();
-            StudentUtils studentUtils = new StudentUtils();
-            //Console.WriteLine(trainer);
-            //Console.WriteLine(trainer2);
-            //List<Trainer> trainers = new List<Trainer>();
-            //trainers.AddcpUtils.GetTrainerDetails();
-            //List<Student> students = new List<Student>();
-            List<Course> courses = new List<Course>();
-            courses = courseUtils.GetListOfCourses();
-            List<Student> students = new List<Student>();
-            students = studentUtils.GetListOfStudents(courses);
 
-            CourseStudents studernsPerCourse = new CourseStudents();
-
+            OrderOfOperations start = new OrderOfOperations();
+            //CommandPromptUtils cpUtils = new CommandPromptUtils();
+            //CourseUtils courseUtils = new CourseUtils();
+            //StudentUtils studentUtils = new StudentUtils();
+            ////Console.WriteLine(trainer);
+            ////Console.WriteLine(trainer2);
+            ////List<Trainer> trainers = new List<Trainer>();
+            ////trainers.AddcpUtils.GetTrainerDetails();
+            ////List<Student> students = new List<Student>();
+            //List<Course> courses = new List<Course>();
+            //courses = courseUtils.GetListOfCourses();
             //List<Student> students = new List<Student>();
-            //students = cpUtils.GetListOfStudents(courses);
-            foreach (var item in courses)
-            {
+            //students = studentUtils.GetListOfStudents(courses);
+
+            //CourseStudents studernsPerCourse = new CourseStudents();
+
+            ////List<Student> students = new List<Student>();
+            ////students = cpUtils.GetListOfStudents(courses);
+            //foreach (var item in courses)
+            //{
                 
-                Console.WriteLine($"This course:\n {item} \nHas these students :\n");
-                List <string> listOfStudents = studernsPerCourse.StudentsPerCourse(item, students);
-                for (int i = 0; i < listOfStudents.Count; i++)
-                {
-                    Console.WriteLine($"{listOfStudents[i]}\n");
+            //    Console.WriteLine($"This course:\n {item} \nHas these students :\n");
+            //    List <string> listOfStudents = studernsPerCourse.StudentsPerCourse(item, students);
+            //    for (int i = 0; i < listOfStudents.Count; i++)
+            //    {
+            //        Console.WriteLine($"{listOfStudents[i]}\n");
 
-                }
-            }
+            //    }
+            //}
 
             //cpUtils.CheckForDuplicateCourses(courses);
 

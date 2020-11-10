@@ -106,5 +106,13 @@ namespace MyIndividualProject.BusinessLogic
             return (listOfStudents);
         }
 
+        public void PrintStudentsList(List<Student> students)
+        {
+            foreach (var item in students)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
     }
 }
